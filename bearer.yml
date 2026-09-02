@@ -1,0 +1,6 @@
+# Bearer CLI Configuration
+# Exclude pre-compiled browser distribution bundle from SAST analysis
+# Source React components in /components and /ui_kits are analyzed directly.
+
+ignore_paths:
+  - "_ds_bundle.js"

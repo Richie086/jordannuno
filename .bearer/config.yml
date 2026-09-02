@@ -1,0 +1,4 @@
+# Bearer Configuration
+# Exclude pre-compiled distribution bundle
+ignored_paths:
+  - "_ds_bundle.js"

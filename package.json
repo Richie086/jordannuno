@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npx -y serve -l 3000 .",
     "dev": "npx -y serve -l 3000 .",
-    "serve": "npx -y serve -l 3000 ."
+    "serve": "npx -y serve -l 3000 .",
+    "security-scan": "bearer scan . --skip-path _ds_bundle.js"
   },
   "keywords": [
     "landscaping",
