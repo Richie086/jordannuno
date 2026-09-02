@@ -2712,7 +2712,7 @@ try { (() => {
         gap: 'var(--space-11)',
         alignItems: 'center'
       }
-    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Eyebrow, null, "Serving the north valley since 2011"), /*#__PURE__*/React.createElement("hr", {
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Eyebrow, null, "Serving Greater Sacramento since 2011"), /*#__PURE__*/React.createElement("hr", {
       className: "jn-rule",
       style: {
         margin: '16px 0 20px'
@@ -2897,7 +2897,7 @@ try { (() => {
         marginTop: 'var(--space-4)',
         fontSize: 'var(--size-h1)'
       }
-    }, "Yards around the valley"), /*#__PURE__*/React.createElement("div", {
+    }, "Yards around Greater Sacramento"), /*#__PURE__*/React.createElement("div", {
       style: {
         display: 'grid',
         gridTemplateColumns: '2fr 1fr 1fr',
@@ -2918,7 +2918,7 @@ try { (() => {
         gap: 'var(--space-5)',
         marginTop: 'var(--space-5)'
       }
-    }, [['Marla T., Ridgeview', 'They quoted $52 a week and it has been $52 a week for two years. Gate always latched.'], ['Dev P., Larkspur', 'Fall cleanup took one morning. The beds looked better than when we moved in.']].map(([who, quote]) => /*#__PURE__*/React.createElement(Card, {
+    }, [['Marla T., East Sacramento', 'They quoted $52 a week and it has been $52 a week for two years. Gate always latched.'], ['Dev P., Folsom', 'Fall cleanup took one morning. The beds looked better than when we moved in.']].map(([who, quote]) => /*#__PURE__*/React.createElement(Card, {
       key: who,
       variant: "flat",
       padding: "lg"
@@ -2948,7 +2948,7 @@ try { (() => {
     }, who))))));
   }
   function ServiceArea() {
-    const towns = ['Ridgeview', 'Larkspur', 'North Bend', 'Cutler', 'Halden', 'Mill Creek', 'Two Rivers', 'Ashgrove'];
+    const towns = ['Sacramento', 'Roseville', 'Folsom', 'Elk Grove', 'Rocklin', 'Davis', 'Granite Bay', 'El Dorado Hills'];
     return /*#__PURE__*/React.createElement(Section, {
       tone: "card",
       pad: "var(--section-y-sm)"
