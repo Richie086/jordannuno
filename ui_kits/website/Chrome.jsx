@@ -49,7 +49,7 @@ function SiteFooter() {
           <div>
             <Wordmark dark />
             <p style={{ marginTop: 'var(--space-5)', fontSize: 14, color: 'var(--text-on-dark-muted)', maxWidth: 260 }}>
-              Family-run since 2011. Serving Roseville, Folsom and the Greater Sacramento area.
+              Family-run since 2011. Serving Rancho Cordova, Orangevale, Fair Oaks, Carmichael, and Folsom.
             </p>
           </div>
           {cols.map(([h, items]) => (

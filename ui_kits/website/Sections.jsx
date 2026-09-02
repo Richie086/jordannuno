@@ -117,14 +117,14 @@ function Work() {
   return (
     <Section>
       <Eyebrow>Recent work</Eyebrow>
-      <h2 style={{ marginTop: 'var(--space-4)', fontSize: 'var(--size-h1)' }}>Yards around Greater Sacramento</h2>
+      <h2 style={{ marginTop: 'var(--space-4)', fontSize: 'var(--size-h1)' }}>Yards around Fair Oaks & Folsom</h2>
       <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: 'var(--space-5)', marginTop: 'var(--space-8)', height: 300 }}>
         <PhotoSlot label="photo: fresh mulch bed, brick walk" />
         <PhotoSlot label="photo: striped back lawn" />
         <PhotoSlot label="photo: fall cleanup, leaf pile" />
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-5)', marginTop: 'var(--space-5)' }}>
-        {[['Marla T., East Sacramento', 'They quoted $52 a week and it has been $52 a week for two years. Gate always latched.'], ['Dev P., Folsom', 'Fall cleanup took one morning. The beds looked better than when we moved in.']].map(([who, quote]) => (
+        {[['Marla T., Fair Oaks', 'They quoted $52 a week and it has been $52 a week for two years. Gate always latched.'], ['Dev P., Folsom', 'Fall cleanup took one morning. The beds looked better than when we moved in.']].map(([who, quote]) => (
           <Card key={who} variant="flat" padding="lg">
             <p style={{ fontFamily: 'var(--font-display)', fontSize: 20, lineHeight: 1.35, color: 'var(--text-strong)' }}>“{quote}”</p>
             <div style={{ marginTop: 'var(--space-5)', display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -139,7 +139,7 @@ function Work() {
 }
 
 function ServiceArea() {
-  const towns = ['Sacramento', 'Roseville', 'Folsom', 'Elk Grove', 'Rocklin', 'Davis', 'Granite Bay', 'El Dorado Hills'];
+  const towns = ['Rancho Cordova', 'Orangevale', 'Fair Oaks', 'Carmichael', 'Folsom'];
   return (
     <Section tone="card" pad="var(--section-y-sm)">
       <div style={{ display: 'flex', gap: 'var(--space-9)', alignItems: 'center', flexWrap: 'wrap' }}>

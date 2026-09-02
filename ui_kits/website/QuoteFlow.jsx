@@ -27,7 +27,7 @@ function QuoteDialog({ open, onClose, onSent }) {
         <div style={{ display: 'grid', gap: 'var(--space-5)' }}>
           <Input label="Name" required placeholder="Marla Tran" />
           <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 'var(--space-5)' }}>
-            <Input label="Property address" required placeholder="1420 Capitol Ave, Sacramento" prefix={<Icon name="map-pin" size={16} />} />
+            <Input label="Property address" required placeholder="1420 Fair Oaks Blvd, Fair Oaks" prefix={<Icon name="map-pin" size={16} />} />
             <Input label="Phone" placeholder="(555) 208-1140" prefix={<Icon name="phone" size={16} />} />
           </div>
           <Switch label="Text me the day before each visit" defaultChecked />

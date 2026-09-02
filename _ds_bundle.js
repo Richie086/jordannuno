@@ -1385,7 +1385,7 @@ try { (() => {
   const JOBS = [{
     id: 'JOB-4187',
     customer: 'Marla Tran',
-    addr: '1420 Capitol Ave, Sacramento',
+    addr: '1420 Fair Oaks Blvd, Fair Oaks',
     service: 'Weekly mowing',
     window: '07:30 – 09:15',
     crew: 'Crew 2',
@@ -1402,8 +1402,8 @@ try { (() => {
     price: 476
   }, {
     id: 'JOB-4189',
-    customer: 'Natomas HOA',
-    addr: 'Common area, Natomas Blvd',
+    customer: 'Sunrise HOA',
+    addr: 'Common area, Folsom Blvd, Rancho Cordova',
     service: 'Weekly mowing',
     window: '10:00 – 13:30',
     crew: 'Crew 3',
@@ -1412,7 +1412,7 @@ try { (() => {
   }, {
     id: 'JOB-4190',
     customer: 'Ana Solis',
-    addr: '17 Rocklin Rd, Rocklin',
+    addr: '17 Greenback Ln, Orangevale',
     service: 'Irrigation check',
     window: '13:00 – 14:00',
     crew: 'Crew 2',
@@ -1421,7 +1421,7 @@ try { (() => {
   }, {
     id: 'JOB-4191',
     customer: 'Ben Ortiz',
-    addr: '3 El Dorado Hills Blvd, El Dorado Hills',
+    addr: '3 Fair Oaks Blvd, Carmichael',
     service: 'Seasonal cleanup',
     window: '14:00 – 17:00',
     crew: 'Crew 1',
@@ -2523,7 +2523,7 @@ try { (() => {
     }, /*#__PURE__*/React.createElement(Input, {
       label: "Property address",
       required: true,
-      placeholder: "1420 Capitol Ave, Sacramento",
+      placeholder: "1420 Fair Oaks Blvd, Fair Oaks",
       prefix: /*#__PURE__*/React.createElement(Icon, {
         name: "map-pin",
         size: 16
@@ -2918,7 +2918,7 @@ try { (() => {
         gap: 'var(--space-5)',
         marginTop: 'var(--space-5)'
       }
-    }, [['Marla T., East Sacramento', 'They quoted $52 a week and it has been $52 a week for two years. Gate always latched.'], ['Dev P., Folsom', 'Fall cleanup took one morning. The beds looked better than when we moved in.']].map(([who, quote]) => /*#__PURE__*/React.createElement(Card, {
+    }, [['Marla T., Fair Oaks', 'They quoted $52 a week and it has been $52 a week for two years. Gate always latched.'], ['Dev P., Folsom', 'Fall cleanup took one morning. The beds looked better than when we moved in.']].map(([who, quote]) => /*#__PURE__*/React.createElement(Card, {
       key: who,
       variant: "flat",
       padding: "lg"
@@ -2948,7 +2948,7 @@ try { (() => {
     }, who))))));
   }
   function ServiceArea() {
-    const towns = ['Sacramento', 'Roseville', 'Folsom', 'Elk Grove', 'Rocklin', 'Davis', 'Granite Bay', 'El Dorado Hills'];
+    const towns = ['Rancho Cordova', 'Orangevale', 'Fair Oaks', 'Carmichael', 'Folsom'];
     return /*#__PURE__*/React.createElement(Section, {
       tone: "card",
       pad: "var(--section-y-sm)"
