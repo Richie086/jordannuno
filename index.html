@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jordon Nuno Landscaping & Lawncare — Local Web Portal</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@0.451.0/dist/umd/lucide.js"></script>
   <style>
     * {
       box-sizing: border-box;
@@ -185,13 +186,13 @@
     
     <nav class="portal-nav">
       <button class="portal-tab active" data-mode="website" onclick="switchTab('website', this)">
-        🏡 Marketing Website
+        <i data-lucide="globe" style="width:14px;height:14px"></i> Marketing Website
       </button>
       <button class="portal-tab" data-mode="ops" onclick="switchTab('ops', this)">
-        🚛 Crew Dispatch Board
+        <i data-lucide="truck" style="width:14px;height:14px"></i> Crew Dispatch Board
       </button>
       <button class="portal-tab" data-mode="ds" onclick="switchTab('ds', this)">
-        🎨 Design System Cards
+        <i data-lucide="palette" style="width:14px;height:14px"></i> Design System Cards
       </button>
     </nav>
 
@@ -295,6 +296,10 @@
         grid.appendChild(item);
       });
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) lucide.createIcons();
+    });
   </script>
 </body>
 </html>
