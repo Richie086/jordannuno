@@ -1,0 +1,29 @@
+:root{
+/* --- Base palette: greens (the yard) --- */
+--green-950:#131f16;--green-900:#1b2c1f;--green-800:#25402a;--green-700:#33512f;--green-600:#425f2e;--green-500:#547536;--green-400:#6d9147;--green-300:#93b26f;--green-200:#bfd3a4;--green-100:#dfe9cf;--green-50:#f0f5e8;
+/* --- Base palette: clay (the tools, the caution stripe) --- */
+--clay-900:#5c3210;--clay-800:#7c440f;--clay-700:#a35b0d;--clay-600:#d97706;--clay-500:#e8951f;--clay-400:#f2b44e;--clay-300:#f8cf8a;--clay-200:#fbe4bd;--clay-100:#fdf3e1;
+/* --- Base palette: earth neutrals (soil, limestone, bone) --- */
+--earth-950:#171512;--earth-900:#232019;--earth-800:#38332a;--earth-700:#524a3d;--earth-600:#6e6555;--earth-500:#8d8474;--earth-400:#b0a897;--earth-300:#ccc5b5;--earth-200:#e3ded1;--earth-100:#f0ece2;--earth-50:#f8f6ef;--white:#ffffff;
+/* --- Semantic accents --- */
+--sky-600:#2f6d8c;--sky-500:#3f89ad;--sky-100:#dceaf1;
+--rust-700:#8e2f1c;--rust-600:#b23d24;--rust-100:#f7e2db;
+--wheat-600:#b79232;--wheat-100:#f6eed4;
+
+/* --- Semantic aliases --- */
+--text-strong:var(--earth-950);--text-body:var(--earth-800);--text-muted:var(--earth-600);--text-faint:var(--earth-500);--text-on-dark:var(--earth-50);--text-on-dark-muted:var(--green-200);--text-brand:var(--green-700);--text-link:var(--green-700);--text-link-hover:var(--green-900);
+
+--surface-page:var(--earth-50);--surface-card:var(--white);--surface-sunken:var(--earth-100);--surface-raised:var(--white);--surface-inverse:var(--green-950);--surface-brand:var(--green-600);--surface-brand-soft:var(--green-50);--surface-accent:var(--clay-600);--surface-accent-soft:var(--clay-100);
+
+--border-hairline:var(--earth-200);--border-default:var(--earth-300);--border-strong:var(--earth-700);--border-brand:var(--green-600);--border-focus:var(--green-500);
+
+--action-primary-bg:var(--green-700);--action-primary-bg-hover:var(--green-800);--action-primary-bg-active:var(--green-900);--action-primary-fg:var(--earth-50);
+--action-accent-bg:var(--clay-600);--action-accent-bg-hover:var(--clay-700);--action-accent-fg:var(--earth-950);
+--action-quiet-bg:transparent;--action-quiet-bg-hover:var(--green-50);
+
+--status-success-fg:var(--green-700);--status-success-bg:var(--green-100);
+--status-warning-fg:var(--clay-800);--status-warning-bg:var(--clay-200);
+--status-danger-fg:var(--rust-700);--status-danger-bg:var(--rust-100);
+--status-info-fg:var(--sky-600);--status-info-bg:var(--sky-100);
+--status-neutral-fg:var(--earth-700);--status-neutral-bg:var(--earth-200);
+}

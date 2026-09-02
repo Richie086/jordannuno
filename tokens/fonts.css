@@ -1,0 +1,4 @@
+/* Webfonts. SUBSTITUTION NOTE: no font files were provided with the brief, so both
+   families are Google Fonts served from the Google CDN. Swap in licensed binaries +
+   local @font-face rules if the business has them. */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Archivo+Expanded:wght@600;700;800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');

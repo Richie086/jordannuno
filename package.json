@@ -1,0 +1,19 @@
+{
+  "name": "jordon-nuno-landscaping",
+  "version": "1.0.0",
+  "description": "Jordon Nuno Landscaping & Lawncare — Website & Design System",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx -y serve -l 3000 .",
+    "dev": "npx -y serve -l 3000 .",
+    "serve": "npx -y serve -l 3000 ."
+  },
+  "keywords": [
+    "landscaping",
+    "lawncare",
+    "design-system",
+    "react"
+  ],
+  "author": "Jordon Nuno",
+  "license": "ISC"
+}

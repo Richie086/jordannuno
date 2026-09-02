@@ -1,0 +1,22 @@
+:root{
+/* Squared-off, workmanlike. Nothing pill-shaped except status chips. */
+--radius-none:0;--radius-xs:3px;--radius-sm:5px;--radius-md:8px;--radius-lg:14px;--radius-xl:22px;--radius-pill:999px;
+--border-width-hairline:1px;--border-width-default:1.5px;--border-width-heavy:3px;
+
+--shadow-none:none;
+--shadow-xs:0 1px 1px rgba(23,21,18,.05);
+--shadow-sm:0 1px 2px rgba(23,21,18,.07),0 1px 1px rgba(23,21,18,.04);
+--shadow-md:0 4px 12px -2px rgba(23,21,18,.10),0 1px 3px rgba(23,21,18,.05);
+--shadow-lg:0 18px 40px -12px rgba(23,21,18,.22),0 2px 6px rgba(23,21,18,.06);
+--shadow-inset-hairline:inset 0 -1px 0 rgba(23,21,18,.06);
+--shadow-focus:0 0 0 3px rgba(84,117,54,.32);
+
+--scrim-image:linear-gradient(180deg,rgba(19,31,22,0) 0%,rgba(19,31,22,.20) 45%,rgba(19,31,22,.78) 100%);/* @kind other */
+--scrim-flat:rgba(19,31,22,.55);
+
+--ease-out:cubic-bezier(.2,.7,.25,1);/* @kind other */
+--ease-in-out:cubic-bezier(.5,0,.3,1);/* @kind other */
+--dur-fast:120ms;/* @kind other */
+--dur-base:180ms;/* @kind other */
+--dur-slow:320ms;/* @kind other */
+}

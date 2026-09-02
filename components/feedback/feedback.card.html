@@ -1,0 +1,25 @@
+<!-- @dsCard group="Components" viewport="700x330" name="Feedback" subtitle="Dialog, Toast, Tooltip." -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>body{background:var(--surface-card);padding:20px;margin:0}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.lbl{font-family:var(--font-ui);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-faint);margin:0 0 8px}.grp{margin-bottom:16px}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.451.0/dist/umd/lucide.js"></script>
+<script src="../../_ds_bundle.js"></script></head><body><div id="root"></div>
+<script type="text/babel">
+const { Dialog, Toast, Tooltip, Button, IconButton, Icon } = window.JordonNunoLandscapingDesignSystem_ad8525;
+
+function Demo(){const [open,setOpen]=React.useState(false);return (<div>
+<div className="grp"><p className="lbl">toasts</p><div style={{display:'flex',flexDirection:'column',gap:10,alignItems:'flex-start'}}>
+<Toast message="Quote sent to Marla T." icon={<Icon name="check" size={16}/>} onDismiss={()=>{}}/>
+<Toast tone="warning" message="Rain in the forecast — 3 jobs may shift." icon={<Icon name="cloud-rain" size={16}/>}/>
+<Toast tone="danger" message="Invoice 4187 failed to send." action={<a href="#" style={{color:'inherit',fontWeight:700}}>Retry</a>}/>
+</div></div>
+<div className="grp"><p className="lbl">tooltip &amp; dialog</p><div className="row">
+<Tooltip content="Reschedule"><IconButton label="Reschedule"><Icon name="calendar-days"/></IconButton></Tooltip>
+<Tooltip content="Right side" placement="right"><Button variant="secondary" size="sm">Hover me</Button></Tooltip>
+<Button onClick={()=>setOpen(true)}>Open dialog</Button></div></div>
+<Dialog open={open} title="Dispatch crew 2?" description="Crew 2 gets a text with the route and gate codes." onClose={()=>setOpen(false)}
+ footer={<><Button variant="ghost" onClick={()=>setOpen(false)}>Cancel</Button><Button onClick={()=>setOpen(false)}>Dispatch</Button></>}/>
+</div>);}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script></body></html>

@@ -1,0 +1,10 @@
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--font-sans);font-size:var(--size-body);line-height:var(--lh-normal);-webkit-font-smoothing:antialiased;text-wrap:pretty}
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--text-strong);letter-spacing:var(--tracking-heading);line-height:var(--lh-snug);margin:0}
+h1{font-size:var(--size-h1);letter-spacing:var(--tracking-display)}h2{font-size:var(--size-h2)}h3{font-size:var(--size-h3)}h4{font-size:var(--size-h4);font-family:var(--font-ui)}
+p{margin:0}
+a{color:var(--text-link);text-decoration-thickness:1px;text-underline-offset:2px;transition:color var(--dur-fast) var(--ease-out)}
+a:hover{color:var(--text-link-hover)}
+:focus-visible{outline:2px solid var(--border-focus);outline-offset:2px}
+.jn-eyebrow{font-family:var(--font-ui);font-size:var(--size-micro);font-weight:var(--weight-bold);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-muted)}
+.jn-rule{height:var(--border-width-heavy);background:var(--surface-accent);width:44px;border:0}

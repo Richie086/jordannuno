@@ -1,0 +1,16 @@
+<!-- @dsCard group="Components" viewport="700x200" name="Navigation" subtitle="Tabs with counts and clay active rule." -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>body{background:var(--surface-card);padding:20px;margin:0}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.lbl{font-family:var(--font-ui);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-faint);margin:0 0 8px}.grp{margin-bottom:16px}</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.451.0/dist/umd/lucide.js"></script>
+<script src="../../_ds_bundle.js"></script></head><body><div id="root"></div>
+<script type="text/babel">
+const { Tabs } = window.JordonNunoLandscapingDesignSystem_ad8525;
+
+function Demo(){const [v,setV]=React.useState('today');return (<div>
+<Tabs value={v} onChange={setV} items={[{value:'today',label:'Today',count:6},{value:'week',label:'This week',count:31},{value:'quotes',label:'Quotes',count:4},{value:'invoices',label:'Invoices'}]}/>
+<p style={{marginTop:16,fontSize:14,color:'var(--text-muted)'}}>Active tab: <span style={{fontFamily:'var(--font-mono)',color:'var(--text-strong)'}}>{v}</span></p>
+</div>);}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script></body></html>

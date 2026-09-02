@@ -1,0 +1,17 @@
+:root{
+--font-display:'Archivo Expanded','Archivo',system-ui,sans-serif;
+--font-sans:'Instrument Sans',system-ui,-apple-system,sans-serif;
+--font-ui:'Archivo',system-ui,sans-serif;
+--font-mono:'JetBrains Mono',ui-monospace,monospace;
+
+--size-display-1:64px;--size-display-2:48px;--size-h1:36px;--size-h2:28px;--size-h3:22px;--size-h4:18px;--size-body-lg:18px;--size-body:16px;--size-body-sm:14px;--size-caption:13px;--size-micro:11px;
+
+--lh-tight:1.04;/* @kind font */
+--lh-snug:1.18;/* @kind font */
+--lh-normal:1.5;/* @kind font */
+--lh-relaxed:1.62;/* @kind font */
+
+--weight-regular:400;--weight-medium:500;--weight-semibold:600;--weight-bold:700;--weight-black:800;
+
+--tracking-display:-0.02em;--tracking-heading:-0.01em;--tracking-body:0em;--tracking-label:0.06em;--tracking-eyebrow:0.14em;
+}

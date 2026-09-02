@@ -1,0 +1,55 @@
+<!-- @dsCard group="Website" viewport="1280x820" name="Marketing site" subtitle="Home page with quote flow — click Get a free quote." -->
+<!-- @startingPoint section="Website" subtitle="Landscaping marketing home page with quote dialog" viewport="1280x820" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Jordon Nuno Landscaping</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.451.0/dist/umd/lucide.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<script>window.DS = window.JordonNunoLandscapingDesignSystem_ad8525;</script>
+<script type="text/babel" src="Chrome.jsx"></script>
+<script type="text/babel" src="Sections.jsx"></script>
+<script type="text/babel" src="QuoteFlow.jsx"></script>
+<script type="text/babel" src="PayFlow.jsx"></script>
+</head><body><div id="root"></div>
+<script type="text/babel" data-presets="react">
+const { Button, Card, Icon, Toast } = window.DS;
+function Site() {
+  const [page, setPage] = React.useState('home');
+  const [quote, setQuote] = React.useState(false);
+  const [sent, setSent] = React.useState(false);
+  const [pay, setPay] = React.useState(false);
+  const [paid, setPaid] = React.useState(null);
+  React.useEffect(() => { if (!sent) return; const t = setTimeout(() => setSent(false), 4000); return () => clearTimeout(t); }, [sent]);
+  React.useEffect(() => { if (!paid) return; const t = setTimeout(() => setPaid(null), 4000); return () => clearTimeout(t); }, [paid]);
+  return (
+    <div>
+      <SiteHeader page={page} setPage={setPage} onQuote={() => setQuote(true)} onPay={() => setPay(true)} />
+      <Hero onQuote={() => setQuote(true)} />
+      <Services onQuote={() => setQuote(true)} />
+      <Process />
+      <Work />
+      <Section tone="card" pad="var(--section-y-sm)">
+        <Eyebrow>Pricing</Eyebrow>
+        <h2 style={{ marginTop: 'var(--space-4)', marginBottom: 'var(--space-7)', fontSize: 'var(--size-h1)' }}>Mowing, by lot size</h2>
+        <PricingTable onQuote={() => setQuote(true)} />
+      </Section>
+      <Section pad="var(--section-y-sm)">
+        <PayBill onPay={() => setPay(true)} />
+      </Section>
+      <ServiceArea />
+      <SiteFooter />
+      <QuoteDialog open={quote} onClose={() => setQuote(false)} onSent={() => setSent(true)} />
+      <PayDialog open={pay} onClose={() => setPay(false)} onPaid={(name) => setPaid(name)} />
+      {sent && <div style={{ position: 'fixed', left: 24, bottom: 24, zIndex: 70 }}>
+        <Toast message="Request sent. We'll reply today." icon={<Icon name="check" size={16} />} onDismiss={() => setSent(false)} />
+      </div>}
+      {paid && <div style={{ position: 'fixed', left: 24, bottom: 24, zIndex: 70 }}>
+        <Toast message={`Handed off to ${paid}. We'll email a receipt.`} icon={<Icon name="check" size={16} />} onDismiss={() => setPaid(null)} />
+      </div>}
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Site />);
+</script></body></html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jordon Nuno Landscaping & Lawncare — Local Web Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--surface-page);
+      color: var(--text-body);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .portal-bar {
+      height: 48px;
+      background: var(--green-950);
+      color: var(--earth-50);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--space-7);
+      border-bottom: 2px solid var(--clay-600);
+      z-index: 100;
+      flex-shrink: 0;
+    }
+    .portal-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .portal-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+      color: var(--earth-50);
+    }
+    .portal-subtitle {
+      font-family: var(--font-ui);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--clay-400);
+    }
+    .portal-nav {
+      display: flex;
+      gap: 6px;
+      background: rgba(240, 245, 232, 0.08);
+      padding: 3px;
+      border-radius: var(--radius-sm);
+    }
+    .portal-tab {
+      background: transparent;
+      border: none;
+      color: var(--text-on-dark-muted);
+      font-family: var(--font-ui);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: var(--radius-xs);
+      cursor: pointer;
+      transition: all var(--dur-fast) var(--ease-out);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .portal-tab:hover {
+      color: var(--earth-50);
+      background: rgba(240, 245, 232, 0.12);
+    }
+    .portal-tab.active {
+      background: var(--clay-600);
+      color: var(--earth-950);
+      font-weight: 700;
+    }
+    .portal-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .portal-link {
+      color: var(--green-200);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .portal-link:hover {
+      color: var(--earth-50);
+      text-decoration: underline;
+    }
+    .content-area {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+    iframe.app-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: var(--surface-page);
+      display: block;
+    }
+    .ds-gallery-container {
+      display: none;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      padding: var(--space-8);
+      background: var(--surface-page);
+    }
+    .ds-gallery-container.active {
+      display: block;
+    }
+    .gallery-header {
+      max-width: 1200px;
+      margin: 0 auto var(--space-8);
+    }
+    .gallery-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: var(--space-6);
+    }
+    .card-preview {
+      background: var(--surface-card);
+      border: 1px solid var(--border-hairline);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-xs);
+      transition: all var(--dur-base) var(--ease-out);
+    }
+    .card-preview:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+    .card-header {
+      padding: var(--space-4) var(--space-5);
+      background: var(--surface-sunken);
+      border-bottom: 1px solid var(--border-hairline);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .card-title {
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-strong);
+    }
+    .card-group {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      padding: 2px 6px;
+      background: var(--green-100);
+      color: var(--green-700);
+      border-radius: var(--radius-xs);
+    }
+    .card-body {
+      height: 220px;
+      width: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <header class="portal-bar">
+    <div class="portal-brand">
+      <span class="portal-title">JORDON NUNO</span>
+      <span class="portal-subtitle">LOCAL PORTAL</span>
+    </div>
+    
+    <nav class="portal-nav">
+      <button class="portal-tab active" data-mode="website" onclick="switchTab('website', this)">
+        🏡 Marketing Website
+      </button>
+      <button class="portal-tab" data-mode="ops" onclick="switchTab('ops', this)">
+        🚛 Crew Dispatch Board
+      </button>
+      <button class="portal-tab" data-mode="ds" onclick="switchTab('ds', this)">
+        🎨 Design System Cards
+      </button>
+    </nav>
+
+    <div class="portal-actions">
+      <a id="directLink" href="ui_kits/website/index.html" target="_blank" class="portal-link">
+        Open Standalone ↗
+      </a>
+    </div>
+  </header>
+
+  <main class="content-area">
+    <iframe id="mainFrame" class="app-frame" src="ui_kits/website/index.html"></iframe>
+    
+    <div id="dsGallery" class="ds-gallery-container">
+      <div class="gallery-header">
+        <div style="font-family:var(--font-ui); font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-muted);">
+          Design System Foundations & Components
+        </div>
+        <h1 style="font-family:var(--font-display); font-size:var(--size-h1); margin-top:var(--space-2); color:var(--text-strong);">
+          Specimen Cards & Token Guidelines
+        </h1>
+        <p style="color:var(--text-muted); font-size:14px; margin-top:var(--space-3); max-width:660px;">
+          All 26 modular specimen cards built for Jordon Nuno's Landscaping & Lawncare design system.
+        </p>
+      </div>
+      <div id="galleryGrid" class="gallery-grid"></div>
+    </div>
+  </main>
+
+  <script>
+    const manifestCards = [
+      { name: "Wordmark", group: "Brand", path: "guidelines/brand-wordmark.html" },
+      { name: "Voice", group: "Brand", path: "guidelines/brand-voice.html" },
+      { name: "Interaction states", group: "Brand", path: "guidelines/brand-states.html" },
+      { name: "Motion", group: "Brand", path: "guidelines/brand-motion.html" },
+      { name: "Image scrim", group: "Brand", path: "guidelines/brand-scrim.html" },
+      { name: "Green ramp", group: "Colors", path: "guidelines/color-green.html" },
+      { name: "Clay ramp", group: "Colors", path: "guidelines/color-clay.html" },
+      { name: "Earth neutrals", group: "Colors", path: "guidelines/color-earth.html" },
+      { name: "Status pairs", group: "Colors", path: "guidelines/color-status.html" },
+      { name: "Surfaces", group: "Colors", path: "guidelines/color-surfaces.html" },
+      { name: "Text colors", group: "Colors", path: "guidelines/color-text.html" },
+      { name: "Display", group: "Type", path: "guidelines/type-display.html" },
+      { name: "Headings", group: "Type", path: "guidelines/type-headings.html" },
+      { name: "Body", group: "Type", path: "guidelines/type-body.html" },
+      { name: "UI & labels", group: "Type", path: "guidelines/type-ui.html" },
+      { name: "Eyebrow + rule", group: "Type", path: "guidelines/type-eyebrow.html" },
+      { name: "Mono", group: "Type", path: "guidelines/type-mono.html" },
+      { name: "Core Components", group: "Components", path: "components/core/core.card.html" },
+      { name: "Forms", group: "Components", path: "components/forms/forms.card.html" },
+      { name: "Feedback", group: "Components", path: "components/feedback/feedback.card.html" },
+      { name: "Navigation", group: "Components", path: "components/navigation/navigation.card.html" },
+      { name: "Spacing scale", group: "Spacing", path: "guidelines/space-scale.html" },
+      { name: "Spacing in use", group: "Spacing", path: "guidelines/space-inuse.html" },
+      { name: "Radii", group: "Spacing", path: "guidelines/shape-radii.html" },
+      { name: "Borders", group: "Spacing", path: "guidelines/shape-borders.html" },
+      { name: "Shadows", group: "Spacing", path: "guidelines/shape-shadow.html" }
+    ];
+
+    function switchTab(mode, targetBtn) {
+      document.querySelectorAll('.portal-tab').forEach(btn => btn.classList.remove('active'));
+      const frame = document.getElementById('mainFrame');
+      const gallery = document.getElementById('dsGallery');
+      const directLink = document.getElementById('directLink');
+
+      const activeBtn = targetBtn || document.querySelector(`.portal-tab[data-mode="${mode}"]`);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      if (mode === 'website') {
+        frame.style.display = 'block';
+        gallery.classList.remove('active');
+        frame.src = 'ui_kits/website/index.html';
+        directLink.href = 'ui_kits/website/index.html';
+      } else if (mode === 'ops') {
+        frame.style.display = 'block';
+        gallery.classList.remove('active');
+        frame.src = 'ui_kits/ops/index.html';
+        directLink.href = 'ui_kits/ops/index.html';
+      } else if (mode === 'ds') {
+        frame.style.display = 'none';
+        gallery.classList.add('active');
+        directLink.href = 'thumbnail.html';
+        renderGallery();
+      }
+    }
+
+    function renderGallery() {
+      const grid = document.getElementById('galleryGrid');
+      if (grid.children.length > 0) return;
+
+      manifestCards.forEach(card => {
+        const item = document.createElement('div');
+        item.className = 'card-preview';
+        item.innerHTML = `
+          <div class="card-header">
+            <span class="card-title">${card.name}</span>
+            <span class="card-group">${card.group}</span>
+          </div>
+          <iframe class="card-body" src="${card.path}"></iframe>
+        `;
+        grid.appendChild(item);
+      });
+    }
+  </script>
+</body>
+</html>

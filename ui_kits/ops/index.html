@@ -1,0 +1,60 @@
+<!-- @dsCard group="Crew Dispatch" viewport="1440x900" name="Dispatch board" subtitle="Internal schedule board — click a job row to open its panel." -->
+<!-- @startingPoint section="Crew Dispatch" subtitle="Internal job schedule board with detail panel" viewport="1440x900" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Crew Dispatch — Jordon Nuno Landscaping</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.451.0/dist/umd/lucide.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<script>window.DS = window.JordonNunoLandscapingDesignSystem_ad8525;</script>
+<script type="text/babel" src="Shell.jsx"></script>
+<script type="text/babel" src="Schedule.jsx"></script>
+<script type="text/babel" src="JobPanel.jsx"></script>
+</head><body style="margin:0">
+<div id="root"></div>
+<script type="text/babel" data-presets="react">
+const { Button, Icon, Dialog, Toast, Card } = window.DS;
+function Ops() {
+  const [view, setView] = React.useState('schedule');
+  const [job, setJob] = React.useState(null);
+  const [confirm, setConfirm] = React.useState(false);
+  const [toast, setToast] = React.useState(null);
+  React.useEffect(() => { if (!toast) return; const t = setTimeout(() => setToast(null), 3500); return () => clearTimeout(t); }, [toast]);
+  return (
+    <div style={{ display: 'flex', height: '100vh', minHeight: 900, background: 'var(--surface-page)' }}>
+      <OpsSidebar view={view} setView={setView} />
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0 }}>
+        <OpsTopbar
+          title={view === 'schedule' ? 'Tuesday, September 1' : view.charAt(0).toUpperCase() + view.slice(1)}
+          subtitle={view === 'schedule' ? '6 jobs · 3 crews · rain expected after 2pm' : null}
+          actions={<Button variant="accent" iconLeft={<Icon name="plus" size={16} />}>New quote</Button>}
+        />
+        <div style={{ flex: 1, display: 'flex', minHeight: 0 }}>
+          <div style={{ flex: 1, overflow: 'auto' }}>
+            {view === 'schedule'
+              ? <ScheduleView selected={job} onSelect={setJob} onDispatch={() => setConfirm(true)} />
+              : <div style={{ padding: 'var(--space-9) var(--space-8)' }}>
+                  <Card variant="flat" padding="lg">
+                    <Icon name="construction" size={22} color="var(--earth-400)" />
+                    <h3 style={{ marginTop: 12 }}>{view.charAt(0).toUpperCase() + view.slice(1)}</h3>
+                    <p style={{ fontSize: 14, color: 'var(--text-muted)', marginTop: 8, maxWidth: 460 }}>
+                      No source designs were supplied for this view, so it is left blank on purpose rather than invented. The Schedule board is the recreated surface.
+                    </p>
+                  </Card>
+                </div>}
+          </div>
+          <JobPanel job={job} onClose={() => setJob(null)} onSave={() => setToast('Job ' + job.id + ' saved.')} />
+        </div>
+      </div>
+      <Dialog open={confirm} title="Dispatch tomorrow's routes?" description="All three crews get a text with their stops, gate codes and notes."
+        onClose={() => setConfirm(false)}
+        footer={<><Button variant="ghost" onClick={() => setConfirm(false)}>Cancel</Button><Button onClick={() => { setConfirm(false); setToast('Routes sent to 3 crews.'); }}>Dispatch</Button></>} />
+      {toast && <div style={{ position: 'fixed', left: 24, bottom: 24, zIndex: 70 }}>
+        <Toast message={toast} icon={<Icon name="check" size={16} />} onDismiss={() => setToast(null)} />
+      </div>}
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Ops />);
+</script></body></html>
